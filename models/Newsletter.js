@@ -76,6 +76,12 @@ const newsletterSchema = new mongoose.Schema(
 			issues: { type: Number, min: 1 },
 			days: { type: Number, min: 1 },
 		},
+		// Every contact from the source goes dormant on each of these days after signing up (lib/source-removal.js).
+		sourceRemoval: {
+			enabled: { type: Boolean, default: false },
+			source: { type: String, trim: true },
+			days: { type: [Number], default: undefined },
+		},
 		// Its own emails (lib/newsletter-emails.js), each written in the editor (format rich, in html) or in Markdown, as
 		// they were before it and as the API takes them.
 		welcome: {

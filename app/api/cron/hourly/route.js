@@ -2,6 +2,7 @@ import { announceTelegram } from "@/lib/alerts";
 import { reconcileBillingPauses } from "@/lib/billing-pause";
 import { withCronSecret } from "@/lib/cron";
 import { recheckDomains } from "@/lib/domains";
+import { runSourceRemovals } from "@/lib/source-removal";
 import { mendStalledImports } from "@/lib/import-jobs";
 import { checkPostshibaStatus } from "@/lib/postshiba-status";
 import { queueDueSummaries } from "@/lib/summary-send";
@@ -13,14 +14,15 @@ export const maxDuration = 60;
 // emails due this hour in their owners' timezones, the daily look at verified sending domains' DNS records, the
 // imports nobody looked at since they stalled, and blocked accounts' billing, plans blocked too long included.
 export const GET = withCronSecret(async () => {
-	const [postshiba, telegram, summaries, domains, imports, billing] = await Promise.all([
+	const [postshiba, telegram, summaries, domains, imports, billing, sourceRemoval] = await Promise.all([
 		checkPostshibaStatus(),
 		announceTelegram(),
 		queueDueSummaries(),
 		recheckDomains(),
 		mendStalledImports(),
 		reconcileBillingPauses(),
+		runSourceRemovals(),
 	]);
-	console.info(`[hourly] ${JSON.stringify({ postshiba, telegram, summaries, domains, imports, billing })}`);
-	return { postshiba, telegram, summaries, domains, imports, billing };
+	console.info(`[hourly] ${JSON.stringify({ postshiba, telegram, summaries, domains, imports, billing, sourceRemoval })}`);
+	return { postshiba, telegram, summaries, domains, imports, billing, sourceRemoval };
 });
