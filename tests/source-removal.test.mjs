@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getSourceRemovalProblem, getSourceRemovalSettings, sourceMatcher, sourceRemovalFilter } from "../lib/source-removal.js";
+import "../lib/source-removal-rules.js";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
