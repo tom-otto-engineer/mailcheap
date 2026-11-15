@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="11 9 45 45">
-  <style>
-    path { fill: #0a0a0a; }
-    @media (prefers-color-scheme: dark) {
-      path { fill: #fafafa; }
-    }
-  </style>
-  <path d="M13 31 52 14 31 37Z"/>
-  <path d="M31 37 52 14 41.5 50Z" fill-opacity="0.35"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b100e"/><path d="M4 13c3.2-4.6 6.4-4.6 9.6 0s6.4 4.6 9.6 0" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".55"/><path d="M4 19c3.2-4.6 6.4-4.6 9.6 0s6.4 4.6 9.6 0c1.6-2.3 3.2-3 4.8-2.2" stroke="#f2622e" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>

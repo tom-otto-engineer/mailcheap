@@ -1,3 +1,5 @@
+> **Ombak Newsletter HQ** is Ombak's self-hosted fork of [MailCheap](https://github.com/marclou/mailcheap) by Marc Lou, licensed under the AGPL-3.0 like the original. Changes in this fork: Ombak's name and logo, adopting SES domains the AWS account already sends from without changing them, and `MAX_NEWSLETTERS_PER_ACCOUNT` to allow more than 3 newsletters.
+
 <p align="center">
   <a href="https://mailcheap.ai">
     <picture>

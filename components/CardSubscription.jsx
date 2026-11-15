@@ -28,7 +28,7 @@ export default function CardSubscription({ account }) {
 export function getPlanDetails(account) {
 	const plan = getAccountPlan(account);
 	if (isOnFreePlan(account)) {
-		return [`Free ${plan.name} plan from MailCheap`, account.comp.until && `Ends ${formatDate(account.comp.until)}`].filter(Boolean);
+		return [`Free ${plan.name} plan from Ombak`, account.comp.until && `Ends ${formatDate(account.comp.until)}`].filter(Boolean);
 	}
 	const price = plan && `${usd.format(getPrice(plan, account.interval))} per ${account.interval}`;
 	const blockedEnd = getBlockedPlanEnd(account.billingPausedAt);
